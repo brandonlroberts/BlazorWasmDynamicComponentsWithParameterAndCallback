@@ -1,0 +1,10 @@
+﻿<DynamicComponent PassedParameters="PassedParameters"/>
+@code {
+    [Parameter] public IDictionary<string, object>? PassedParameters { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+}

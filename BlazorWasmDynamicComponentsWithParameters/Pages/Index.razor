@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<H3>@IndexPage</H3>
+
+<DynamicComponent Type="typeof(Last)" Parameters="PassedParameters"></DynamicComponent>
+
+@code{
+    readonly IDictionary<string, object> PassedParameters = new Dictionary<string, object>();
+    private const string Title = "Success From Last!!!";
+    private string? IndexPage;
+
+    protected override void OnInitialized()
+    {
+        PassedParameters.Add("Title", Title);
+        PassedParameters.Add("OnClickFunction", EventCallback.Factory.Create<Type>(this, GoToComponent));
+    }
+
+    public void GoToComponent(Type type)
+    {
+        IndexPage = "Success from index!!!";
+    }
+}
