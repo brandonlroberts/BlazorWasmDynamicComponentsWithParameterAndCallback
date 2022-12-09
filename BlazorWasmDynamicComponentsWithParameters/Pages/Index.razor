@@ -1,8 +1,8 @@
 ﻿@page "/"
 
-<H3>@IndexPage</H3>
+<h3>@IndexPage</h3>
 
-<DynamicComponent Type="typeof(Last)" Parameters="PassedParameters"></DynamicComponent>
+<Middle PassedParameters="PassedParameters"></Middle>
 
 @code{
     readonly IDictionary<string, object> PassedParameters = new Dictionary<string, object>();
